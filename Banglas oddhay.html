@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>RK Methods</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #1e293b;
+      padding: 15px 10px;
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      margin: 8px 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    .content {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+
+    h2 {
+      color: #facc15;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      color: #38bdf8;
+    }
+
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .lesson-card {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 16px;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      color: #e2e8f0;
+    }
+
+    .lesson-card:hover {
+      background-color: #334155;
+      transform: scale(1.02);
+    }
+
+    .lesson-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #facc15;
+    }
+
+    .check {
+      color: #22c55e;
+      margin-left: 8px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #60a5fa;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+      color: #3b82f6;
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .section-title {
+        font-size: 1.1rem;
+      }
+
+      nav a {
+        font-size: 14px;
+        margin: 6px 8px;
+      }
+
+      .lesson-title {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="bangla.html">Bangla</a>
+    <a href="math.html">Math</a>
+    <a href="science.html">Science</a>
+  </nav>
+
+  <div class="content">
+    <a href="acs.html" class="back-link">← কোর্সে ফিরে যান</a>
+
+    <h2>📚 বাংলা ১ম পত্র</h2>
+
+    <div class="section-title">📘 গদ্য (Prose) – মোট ৬টি পাঠ</div>
+    <div class="lesson-grid">
+      <a href="prottopokar.html" class="lesson-card"><div class="lesson-title">প্রত্তুপকার</div></a>
+      <a href="subha.html" class="lesson-card"><div class="lesson-title">সুভা</div></a>
+      <a href="boi-pora.html" class="lesson-card"><div class="lesson-title">বই পড়া</div></a>
+      <a href="am-atir-bhepu.html" class="lesson-card"><div class="lesson-title">আম-আটির ভেঁপু</div></a>
+      <a href="nim-gachh.html" class="lesson-card"><div class="lesson-title">নিমগাছ</div></a>
+      <a href="manush-muhammad.html" class="lesson-card"><div class="lesson-title">মানুষ মুহাম্মদ (সঃ)<span class="check">✅</span></div></a>
+    </div>
+
+    <div class="section-title">📕 পদ্য (Poetry) – মোট ৬টি পাঠ</div>
+    <div class="lesson-grid">
+      <a href="kopotakkho.html" class="lesson-card"><div class="lesson-title">কপোতাক্ষ নদ</div></a>
+      <a href="jibon-binimoy.html" class="lesson-card"><div class="lesson-title">জীবন বিনিময়</div></a>
+      <a href="umar-faruk.html" class="lesson-card"><div class="lesson-title">উমর ফারুক<span class="check">✅</span></div></a>
+      <a href="sheidin.html" class="lesson-card"><div class="lesson-title">সেইদিন এই মাঠে</div></a>
+      <a href="bristi.html" class="lesson-card"><div class="lesson-title">বৃষ্টি</div></a>
+      <a href="ami-agontuk.html" class="lesson-card"><div class="lesson-title">আমি কোনো আগন্তুক নই</div></a>
+    </div>
+  </div>
+
+</body>
+</html>

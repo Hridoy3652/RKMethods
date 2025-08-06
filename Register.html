@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | EduMethods</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f172a, #1e293b);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-4">
+  <div class="bg-white/5 backdrop-blur-sm p-8 rounded-2xl shadow-2xl w-full max-w-md border border-white/10 text-white">
+    <h2 class="text-3xl font-bold text-center mb-6 text-cyan-300">Create Account</h2>
+
+    <!-- Register Form -->
+    <form id="registerForm" class="space-y-5">
+      <div>
+        <label for="name" class="block text-sm font-semibold text-cyan-200">Full Name</label>
+        <input type="text" id="name" class="w-full mt-1 p-3 rounded-lg bg-white/10 text-white border border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400" required />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-semibold text-cyan-200">Email</label>
+        <input type="email" id="email" class="w-full mt-1 p-3 rounded-lg bg-white/10 text-white border border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400" required />
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-semibold text-cyan-200">Password</label>
+        <input type="password" id="password" class="w-full mt-1 p-3 rounded-lg bg-white/10 text-white border border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400" required />
+      </div>
+
+      <button type="submit" class="w-full py-3 bg-gradient-to-r from-cyan-400 to-blue-600 text-white rounded-lg hover:from-cyan-300 hover:to-blue-500 transition duration-300 font-semibold">
+        Register
+      </button>
+    </form>
+
+    <div class="my-4 text-center text-sm text-gray-300">or</div>
+
+    <!-- Google Sign-up -->
+    <button id="googleSignUp" class="w-full flex items-center justify-center gap-2 border border-cyan-500 bg-white/10 hover:bg-white/20 text-cyan-200 py-2 rounded-lg transition duration-300">
+      <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="h-5 w-5" alt="Google" />
+      <span>Continue with Google</span>
+    </button>
+
+    <p class="mt-6 text-sm text-center text-gray-300">
+      Already have an account?
+      <a href="login.html" class="text-cyan-300 hover:underline">Login here</a>
+    </p>
+  </div>
+
+  <!-- Firebase Auth Logic -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDw71kmbdQKXYh-Ix6kPsC4jb_HA6arqzU",
+      authDomain: "rkmethods-e33d7.firebaseapp.com",
+      projectId: "rkmethods-e33d7",
+      storageBucket: "rkmethods-e33d7.appspot.com",
+      messagingSenderId: "100555956968",
+      appId: "1:100555956968:web:d7b220968236882e8a5f5d",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Auto redirect if already signed in
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        window.location.href = "index.html";
+      }
+    });
+
+    // Email + password register
+    document.getElementById("registerForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+        await userCredential.user.updateProfile({ displayName: name });
+        alert("Account created successfully!");
+        window.location.href = "index.html";
+      } catch (error) {
+        alert("Error: " + error.message);
+      }
+    });
+
+    // Google sign-up
+    document.getElementById("googleSignUp").addEventListener("click", async () => {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      try {
+        await auth.signInWithPopup(provider);
+        alert("Signed in with Google!");
+        window.location.href = "index.html";
+      } catch (error) {
+        alert("Google Sign-in failed: " + error.message);
+      }
+    });
+  </script>
+</body>
+</html>

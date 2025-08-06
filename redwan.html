@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>RK Methods</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+
+    nav {
+      background-color: #1e293b;
+      padding: 15px 10px;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      margin: 10px 15px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #38bdf8;
+    }
+
+    .course-card {
+      background-color: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      margin: 20px 0;
+      transition: transform 0.3s;
+    }
+
+    .course-card:hover {
+      transform: scale(1.03);
+    }
+
+    .course-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .course-content {
+      padding: 20px;
+    }
+
+    .course-title {
+      margin: 0 0 10px 0;
+      font-size: 1.5rem;
+      color: #facc15;
+    }
+
+    .course-desc {
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
+
+    a.card-link {
+      text-decoration: none;
+      display: block;
+    }
+
+    /* 🔁 Responsive Design */
+    @media (max-width: 600px) {
+      nav a {
+        font-size: 14px;
+        margin: 8px 10px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .course-title {
+        font-size: 1.2rem;
+      }
+
+      .course-desc {
+        font-size: 0.95rem;
+      }
+
+      .course-content {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="redwan.html">Redwan Method</a>
+    <a href="pahlovi.html">Pahlovi Sir</a>
+    <a href="acs.html">ACS Future</a>
+    <a href="fahad.html">Fahad Tutorial</a>
+  </nav>
+
+  <div class="content">
+    <h1>Redwan Method - Course Categories</h1>
+
+    <!-- ✅ Course Card -->
+    <a href="math-lectures.html" class="card-link">
+      <div class="course-card">
+        <img src="math-banner.png" alt="Math Basic to Pro" class="course-img">
+        <div class="course-content">
+          <h3 class="course-title">Math</h3>
+          <p class="course-desc">Explore lectures on Algebra, Geometry, and more from Chapter 1 to 10.</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- ✅ Add more cards if needed -->
+    <!--
+    <a href="science.html" class="card-link">
+      <div class="course-card">
+        <img src="science-banner.png" alt="Science" class="course-img">
+        <div class="course-content">
+          <h3 class="course-title">Science</h3>
+          <p class="course-desc">Physics, Chemistry, and Biology lessons in one place.</p>
+        </div>
+      </div>
+    </a>
+    -->
+
+  </div>
+
+</body>
+</html>
