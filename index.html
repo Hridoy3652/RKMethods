@@ -92,6 +92,8 @@
       overflow: hidden;
       transition: transform 0.3s ease;
       cursor: pointer;
+      text-decoration: none;
+      display: block;
     }
     .course-card:hover {
       transform: translateY(-5px);
@@ -151,8 +153,12 @@
 
   <!-- Course Cards -->
   <section class="fade-in">
-    <h2 class="section-title">🎓Courses</h2>
+    <h2 class="section-title">🎓 Courses</h2>
     <div class="card-grid">
+
+      <!-- Syllabus Card -->
+     
+
       <div class="course-card" onclick="window.location.href='redwan.html'">
         <img src="channels4_profile.jpg" alt="Redwan Method">
         <div class="info">
@@ -168,7 +174,13 @@
           <p>Subject-focused coaching with modern techniques & tools.</p>
         </div>
       </div>
-
+ <a class="course-card" href="https://drive.google.com/drive/folders/1bOnGTpuxNRK2aVt9BeEaFFWgxR_QVmQs?usp=drive_link" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Syllabus">
+        <div class="info">
+          <h3>📚 সিলেবাস</h3>
+          <p>পুরো সিলেবাস দেখতে এখানে ক্লিক করুন</p>
+        </div>
+      </a>
       <div class="course-card" onclick="window.location.href='pahlovi.html'">
         <img src="https://i.imgur.com/WyTr7Fq.jpg" alt="Pahlovi Sir">
         <div class="info">
@@ -192,30 +204,7 @@
   </footer>
 
   <!-- Firebase Auth Check -->
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyDw71kmbdQKXYh-Ix6kPsC4jb_HA6arqzU",
-      authDomain: "rkmethods-e33d7.firebaseapp.com",
-      projectId: "rkmethods-e33d7",
-      storageBucket: "rkmethods-e33d7.firebasestorage.app",
-      messagingSenderId: "100555956968",
-      appId: "1:100555956968:web:d7b220968236882e8a5f5d"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
-    auth.onAuthStateChanged(user => {
-      if (!user) {
-        window.location.href = "login.html";
-      }
-    });
-
-    function logout() {
-      auth.signOut().then(() => {
-        window.location.href = "login.html";
-      });
-    }
-  </script>
+  
 </body>
 </html>
+
