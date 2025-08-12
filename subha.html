@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RK Methods</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <style>
-    /* Styles same as before */
     body {
       font-family: Arial, sans-serif;
       background-color: #0f172a;
@@ -15,13 +14,11 @@
       margin: 0;
       padding: 0;
     }
-
     nav {
       background-color: #1e293b;
       padding: 15px;
       text-align: center;
     }
-
     nav a {
       color: #cbd5e1;
       margin: 0 15px;
@@ -29,23 +26,19 @@
       font-weight: 600;
       font-size: 18px;
     }
-
     nav a:hover {
       color: #60a5fa;
     }
-
     .container {
       max-width: 900px;
       margin: 30px auto;
       padding: 0 20px;
     }
-
     h2 {
       color: #facc15;
       font-size: 1.4rem;
       margin-bottom: 20px;
     }
-
     iframe {
       width: 100%;
       height: 450px;
@@ -53,7 +46,6 @@
       margin-bottom: 20px;
       border: 2px solid #334155;
     }
-
     .instructor-card {
       display: flex;
       align-items: center;
@@ -63,7 +55,6 @@
       margin-bottom: 25px;
       border: 1px solid #334155;
     }
-
     .instructor-card img {
       width: 50px;
       height: 50px;
@@ -71,16 +62,13 @@
       object-fit: cover;
       border: 2px solid #3b82f6;
     }
-
     .instructor-details {
       margin-left: 15px;
     }
-
     .instructor-name {
       font-weight: bold;
       color: #3b82f6;
     }
-
     .material-section {
       background-color: #1e293b;
       padding: 20px;
@@ -88,12 +76,10 @@
       border: 1px solid #334155;
       margin-top: 30px;
     }
-
     .material-section h3 {
       margin-top: 0;
       color: #facc15;
     }
-
     .material-link {
       display: inline-block;
       margin-top: 10px;
@@ -104,11 +90,9 @@
       text-decoration: none;
       transition: background 0.3s;
     }
-
     .material-link:hover {
       background-color: #2563eb;
     }
-
     .back-link {
       color: #60a5fa;
       text-decoration: none;
@@ -116,7 +100,6 @@
       display: inline-block;
       margin-bottom: 20px;
     }
-
     .video-item {
       display: flex;
       align-items: center;
@@ -129,11 +112,9 @@
       transition: background-color 0.3s;
       cursor: pointer;
     }
-
     .video-item:hover {
       background-color: #475569;
     }
-
     .dot {
       width: 10px;
       height: 10px;
@@ -158,7 +139,11 @@
 
     <h2>সুভা</h2>
 
-    <iframe id="videoFrame" src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+    <!-- Default video autoplay & mute -->
+    <iframe id="videoFrame" 
+      src="https://www.youtube.com/embed/ydGEnhbMszc?autoplay=1&mute=1&rel=0&modestbranding=1&showinfo=0" 
+      allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
     <p><strong id="videoTitle">সুভা</strong></p>
 
     <div class="instructor-card">
@@ -173,18 +158,13 @@
       <h3>🎥 ক্লাস ভিডিও</h3>
       <ul>
         <li>
-          <a class="video-item" onclick="changeVideo('tPPXeXZdYgw', 'Lecture 1')">
+          <a class="video-item" onclick="changeVideo('https://www.youtube.com/embed/ydGEnhbMszc?autoplay=1&mute=1&rel=0&modestbranding=1&showinfo=0', 'Lecture 1')">
             <span class="dot"></span> Video: সুভা (পর্ব ১)
           </a>
         </li>
         <li>
-          <a class="video-item" onclick="changeVideo('VIDEO_ID_2', 'Lecture 2')">
+          <a class="video-item" onclick="changeVideo('https://iframe.mediadelivery.net/embed/342579/f28374ba-fca3-47ae-936b-fa6d771a5033?autoplay=1&muted=true', 'Lecture 2')">
             <span class="dot"></span> Video: সুভা (পর্ব ২)
-          </a>
-        </li>
-        <li>
-          <a class="video-item" onclick="changeVideo('VIDEO_ID_3', 'Lecture ৩')">
-            <span class="dot"></span> Video: সুভা (পর্ব ৩)
           </a>
         </li>
       </ul>
@@ -197,11 +177,11 @@
   </div>
 
   <script>
-    function changeVideo(videoId, title) {
+    function changeVideo(videoUrl, title) {
       const iframe = document.getElementById("videoFrame");
-      iframe.src = "https://www.youtube.com/embed/" + videoId;
+      iframe.src = videoUrl;
       document.getElementById("videoTitle").textContent = "Chapter-3 || " + title;
     }
   </script>
-</body>
+</body>                  
 </html>
