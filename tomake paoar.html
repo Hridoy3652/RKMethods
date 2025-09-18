@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RK Methods</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #1e293b;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #facc15;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 2px solid #334155;
+    }
+
+    .instructor-card {
+      display: flex;
+      align-items: center;
+      background-color: #1e293b;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      border: 1px solid #334155;
+      gap: 15px;
+      flex-direction: row;
+    }
+
+    .instructor-card img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #3b82f6;
+    }
+
+    .instructor-details {
+      flex-grow: 1;
+    }
+
+    .instructor-name {
+      font-weight: bold;
+      color: #3b82f6;
+    }
+
+    @media (max-width: 500px) {
+      .instructor-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .instructor-details {
+        margin: 10px 0 0 0;
+      }
+
+      iframe {
+        height: 250px;
+      }
+    }
+
+    .material-section {
+      background-color: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #334155;
+      margin-top: 30px;
+    }
+
+    .material-section h3 {
+      margin-top: 0;
+      color: #facc15;
+    }
+
+    .material-link {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .material-link:hover {
+      background-color: #2563eb;
+    }
+
+    .back-link {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .video-item {
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background-color: #334155;
+      margin-bottom: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .video-item:hover {
+      background-color: #475569;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #f87171;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="redwan.html">Redwan Method</a>
+    <a href="pahlovi.html">Pahlovi Sir</a>
+    <a href="acs.html">ACS Future</a>
+    <a href="fahad.html">Fahad Tutorial</a>
+  </nav>
+
+
+
+  <div class="container">
+    <a href="math-lectures.html" class="back-link">← Back to Courses</a>
+
+    <h2>তোমাকে পাওয়ার জন্যে, হে স্বাধীনতা </h2>
+
+   <iframe id="videoFrame" 
+        src="https://www.youtube.com/embed/6KNM0iyiK2Y?rel=0&modestbranding=1&showinfo=0&controls=1&autoplay=1" 
+        allow="autoplay; fullscreen">
+</iframe>
+
+
+    <p><strong> তোমাকে পাওয়ার জন্যে, হে স্বাধীনতা </strong></p>
+
+    <div class="instructor-card">
+      <img src="https://yt3.ggpht.com/ytc/AAUvwnjWQGpUfd6Qw3M0E8XvPAV7Q3NZKDzK3xk-XyyM=s88-c-k-c0x00ffffff-no-rj" alt="Instructor">
+      <div class="instructor-details">
+        <div class="instructor-name">Abida Apu</div>
+        <div>কোর্স শিক্ষক</div>
+      </div>
+    </div>
+ <div class="material-section">
+      <h3>🎥 ক্লাস ভিডিও</h3>
+      <ul>
+        <li>
+          <a class="video-item" onclick="changeVideo('6KNM0iyiK2Y', 'Lecture 1')">
+            <span class="dot"></span> Video: তোমাকে পাওয়ার জন্যে, হে স্বাধীনতা (পর্ব ১)
+          </a>
+        </li>
+     
+
+      </ul>
+    </div>
+
+    <div class="material-section">
+      <h3>📘 লেকচার শিট</h3>
+      <a class="material-link" href="#" target="_blank">📄 ডাউনলোড করুন</a>
+    </div>
+  </div>
+
+ <script>
+    function changeVideo(videoId, title) {
+      const iframe = document.getElementById("videoFrame");
+      iframe.src = "https://www.youtube.com/embed/" + videoId + "?rel=0&modestbranding=1&showinfo=0&controls=1";
+      document.getElementById("videoTitle").textContent = "Chapter-3 || " + title;
+    }
+  </script>
+
+</body>
+</html>
+
+
