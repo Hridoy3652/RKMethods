@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>RK Methods</title>
+ <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #1e293b;
+      padding: 15px 10px;
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      margin: 8px 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    .content {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+
+    h2 {
+      color: #facc15;
+      font-size: 1.6rem;
+      margin: 25px 0 15px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #60a5fa;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+      color: #3b82f6;
+    }
+
+    /* Subject Cards */
+    .subjects-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3x3 layout */
+      gap: 20px;
+    }
+
+    .subject-card {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      color: white;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      nav a {
+        font-size: 14px;
+        margin: 6px 8px;
+      }
+
+      .subjects-container {
+        grid-template-columns: repeat(2, 1fr); /* ছোট স্ক্রিনে 2 কলাম */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="bangla.html">Bangla</a>
+    <a href="math.html">Math</a>
+    <a href="science.html">Science</a>
+  </nav>
+
+  <div class="content">
+    <a href="FRB.html" class="back-link">← কোর্সে ফিরে যান</a>
+
+    <h2>📖 গদ্য (Prose)</h2>
+    <div class="subjects-container" id="prose"></div>
+
+    <h2>✍️ পদ্য (Poetry)</h2>
+    <div class="subjects-container" id="poetry"></div>
+  </div>
+
+  <script>
+    // গদ্য তালিকা
+    const proseList = [
+      { name: "প্রত্যুপকার", link: "RM FRB Bangla-G1.html" },
+      { name: "সুভা", link: "RM FRB Bangla-G2.html" },
+      { name: "বই পড়া", link: "RM FRB Bangla-G3.html" },
+      { name: "আম-আটির ভেঁপু", link: "RM FRB Bangla-G4.html" },
+      { name: "নিমগাছ", link: "RM FRB Bangla-G5.html" },
+      { name: "শিক্ষা ও মনুষ্যত্ব", link: "RM FRB Bangla-G6.html" },
+      { name: "প্রবাস বন্ধু", link: "RM FRB Bangla-G7.html" },
+      { name: "একুশের গল্প", link: "RM FRB Bangla-G8.html" },
+      { name: "মানুষ মুহাম্মদ (সঃ)", link: "RM FRB Bangla-G9.html" }
+    ];
+
+    // পদ্য তালিকা
+    const poetryList = [
+      { name: "কপোতাক্ষ নদ", link: "RM FRB Bangla-P1.html" },
+      { name: "জীবন বিনিময়", link: "RM FRB Bangla-P2.html" },
+      { name: "উমর ফারুক", link: "RM FRB Bangla-P3.html" },
+      { name: "সেইদিন এই মাঠ", link: "RM FRB Bangla-P4.html" },
+      { name: "বৃষ্টি", link: "RM FRB Bangla-P5.html" },
+      { name: "তোমাকে পাওয়ার জন্যে, হে স্বাধীনতা", link: "RM FRB Bangla-P6.html" },
+      { name: "বোশেখ", link: "RM FRB Bangla-P7.html" },
+      { name: "আমি কোনো আগন্তুক নই", link: "RM FRB Bangla-P8.html" },
+    ];
+
+    function renderSubjects(list, containerId) {
+      const container = document.getElementById(containerId);
+      list.forEach(subject => {
+        const card = document.createElement("div");
+        card.classList.add("subject-card");
+        card.textContent = subject.name;
+        card.onclick = () => {
+          window.location.href = subject.link;
+        };
+        container.appendChild(card);
+      });
+    }
+
+    renderSubjects(proseList, "prose");
+    renderSubjects(poetryList, "poetry");
+  </script>
+
+</body>
+</html>
