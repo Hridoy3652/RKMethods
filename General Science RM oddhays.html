@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>RK Methods</title>
+ <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #1e293b;
+      padding: 15px 10px;
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      margin: 8px 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    .content {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+
+    h2 {
+      color: #facc15;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #60a5fa;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+      color: #3b82f6;
+    }
+
+    /* Subject Cards */
+    .subjects-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3x3 layout */
+      gap: 20px;
+    }
+
+    .subject-card {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      color: white;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      nav a {
+        font-size: 14px;
+        margin: 6px 8px;
+      }
+
+      .subjects-container {
+        grid-template-columns: repeat(2, 1fr); /* ছোট স্ক্রিনে 2 কলাম */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="bangla.html">Bangla</a>
+    <a href="math.html">Math</a>
+    <a href="science.html">Science</a>
+  </nav>
+
+  <div class="content">
+    <a href="RMFRB.html" class="back-link">← কোর্সে ফিরে যান</a>
+
+    <h2>📚 RM FRPB G.Science Chapters</h2>
+
+    <div class="subjects-container" id="subjects"></div>
+  </div>
+
+  <script>
+    // শুধু নাম আর লিঙ্ক লিখলেই হবে
+    const subjectList = [
+      { name: "উন্নতর জীবনধারা", link: "RM FRB Science Ch-1.html" },
+      { name: " জীবনের জন্য পানি", link: "RM FRB Science Ch-2.html" },
+      { name: " হৃদযন্ত্রের যত কথা ", link: "RM FRB Science Ch-3.html" },
+      { name: "অম্ল, ক্ষারক ও লবণের ব্যবহার", link: "RM FRB Science Ch-7.html" },
+      { name: "এসো বলকে জানি", link: "RM FRB Science Ch-10.html" },
+      { name: "প্রাত্যহিক জীবনে বিদ্যুৎ", link: "RM FRB Science Ch-11.html" },
+      //{ name: "New Subject", link: "newsubject.html" }
+      
+    ];
+
+    const container = document.getElementById("subjects");
+
+    // অটো কার্ড তৈরি হবে
+    subjectList.forEach(subject => {
+      const card = document.createElement("div");
+      card.classList.add("subject-card");
+      card.textContent = subject.name;
+
+      // ক্লিক করলে লিঙ্কে যাবে
+      card.onclick = () => {
+        window.location.href = subject.link;
+      };
+
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
