@@ -38,7 +38,7 @@
     <a href="fahad.html">Fahad Tutorial</a>
   </nav>
   <div class="container">
-    <a href="Physics ACS oddhays.html" class="back-link">← কোর্সে ফিরে যান</a>
+    <a href="Chemistry ACS oddhays.html" class="back-link">← কোর্সে ফিরে যান</a>
     <h2 id="chapter-title"></h2>
     <div class="plyr__video-embed" id="player">
       <iframe id="main-video" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
@@ -62,16 +62,16 @@
   </div>
   <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
   <script>
-    const chapterName = "বল";
+    const chapterName = "পদার্থের গঠন"; 
     const videos = [
-      { id: "Upcoming 1", title: `${chapterName} (পর্ব ১)` },
-      { id: "Upcoming 2", title: `${chapterName} (পর্ব ২)` },
-      { id: "Upcoming 3", title: `${chapterName} (পর্ব ৩)` },
+      { id: "6u-Q8qwJOLo", title: `$পদার্থের গঠন (পর্ব ১)` },
+      { id: "Upcoming 2", title: `$পদার্থের গঠন (পর্ব ২)` },
+      { id: "Upcoming 3", title: `$পদার্থের গঠন (পর্ব ৩)` },
     ];
     document.getElementById("chapter-title").textContent = chapterName;
     document.getElementById("chapter-title-2").textContent = chapterName;
     const videoList = document.getElementById("video-list");
-    videos.forEach((video, index) => {
+    videos.forEach((video) => {
       const li = document.createElement("li");
       li.innerHTML = `<a class="video-item" onclick="changeVideo('${video.id}')"><span class="dot"></span> Video: ${video.title}</a>`;
       videoList.appendChild(li);
